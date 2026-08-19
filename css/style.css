@@ -83,11 +83,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .contact-info a:hover {
-  color: #50d8af;
+  color: #FF6600;
 }
 
 #topbar .contact-info i {
-  color: #50d8af;
+  color: #FF6600;
   padding: 4px;
 }
 
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #50d8af;
+  color: #FF6600;
 }
 
 #topbar .social-links a:first-child {
@@ -147,6 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
+  margin-top: -10px;
 }
 
 @media (max-width: 768px) {
@@ -195,8 +196,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-content h2 span {
-  color: #50d8af;
+  color: #FF6600;
   text-decoration: underline;
+}
+
+#intro .intro-content h2 .blue-text {
+  color: #0a1e5e;
 }
 
 @media (max-width: 767px) {
@@ -219,23 +224,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-content .btn-get-started {
-  background: #0c2e8a;
-  border: 2px solid #0c2e8a;
+  background: #0a1e5e;
+  border: 2px solid #0a1e5e;
 }
 
 #intro .intro-content .btn-get-started:hover {
   background: none;
-  color: #0c2e8a;
+  color: #0a1e5e;
 }
 
 #intro .intro-content .btn-projects {
-  background: #50d8af;
-  border: 2px solid #50d8af;
+  background: #FF6600;
+  border: 2px solid #FF6600;
 }
 
 #intro .intro-content .btn-projects:hover {
   background: none;
-  color: #50d8af;
+  color: #FF6600;
 }
 
 #intro #intro-carousel {
@@ -349,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu li:hover > a, .nav-menu > .menu-active > a {
-  color: #50d8af;
+  color: #FF6600;
 }
 
 .nav-menu > li {
@@ -377,7 +382,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu ul li:hover > a {
-  color: #50d8af;
+  color: #FF6600;
 }
 
 .nav-menu ul ul {
@@ -555,7 +560,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .content h2 {
-  color: #0c2e8a;
+  color: #0a1e5e;
   font-weight: 700;
   font-size: 36px;
   font-family: "Raleway", sans-serif;
@@ -580,7 +585,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .content i {
   font-size: 20px;
   padding-right: 4px;
-  color: #50d8af;
+  color: #FF6600;
 }
 
 #about .content ul {
