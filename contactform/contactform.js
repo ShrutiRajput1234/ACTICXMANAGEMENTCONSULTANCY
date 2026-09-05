@@ -89,23 +89,41 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = $(this).serialize();
+
+    var form = $(this);
+    var payload = {
+      name: form.find('[name="name"]').val(),
+      email: form.find('[name="email"]').val(),
+      message: form.find('[name="message"]').val(),
+      mobile: form.find('[name="mobile"]').val(),
+      brand: 'actipxgroup',
+      services: [],
+      additionalProp1: {
+        subject: form.find('[name="subject"]').val()
+      }
+    };
+
     $.ajax({
       type: "POST",
-      url: "contactform/contactform.php",
-      data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
+      url: "https://mailporter.vercel.app/api/email/send-email/gmail",
+      headers: {
+        "x-api-key": "SuperSecretApiKey123!@#"
+      },
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify(payload),
+      success: function() {
+        $("#sendmessage").addClass("show");
+        $("#errormessage").removeClass("show");
+        form.find("input, textarea").val("");
+      },
+      error: function(xhr) {
+        var message = "Unable to send your message. Please try again.";
+        if (xhr.responseJSON && xhr.responseJSON.message) {
+          message = xhr.responseJSON.message;
         }
-
+        $("#sendmessage").removeClass("show");
+        $("#errormessage").addClass("show").html(message);
       }
     });
     return false;
